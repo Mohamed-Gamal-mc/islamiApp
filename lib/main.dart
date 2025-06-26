@@ -8,6 +8,7 @@ void main() {
   runApp(IslamiApp());
 }
 
+//adasdsdaasd
 class IslamiApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
