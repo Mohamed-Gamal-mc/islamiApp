@@ -1,0 +1,35 @@
+# اجعل كل الملفات النصية تستخدم CRLF
+* text=auto eol=crlf
+
+# لكن ملفات الـ shell scripts تفضل LF عشان تشتغل على أنظمة Linux/macOS
+*.sh text eol=lf
+
+# ملفات Dart
+*.dart text
+
+# ملفات YAML
+*.yaml text
+*.yml text
+
+# ملفات HTML و CSS و JS
+*.html text
+*.css text
+*.js text
+
+# ملفات JSON و Markdown
+*.json text
+*.md text
+
+# ملفات الصور (binary)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+
+# ملفات الخطوط (binary)
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
