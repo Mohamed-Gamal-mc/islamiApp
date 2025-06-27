@@ -5,8 +5,6 @@ class SettingsTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Color.fromARGB(255, 4, 138, 175),
-    );
+    return Scaffold();
   }
 }
