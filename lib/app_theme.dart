@@ -13,6 +13,7 @@ class AppTheme {
       appBarTheme: AppBarTheme(
           shadowColor: Colors.transparent,
           backgroundColor: Colors.transparent,
+          iconTheme: IconThemeData(color: Colors.black),
           centerTitle: true,
           titleTextStyle: TextStyle(
               fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black)),
@@ -29,7 +30,24 @@ class AppTheme {
               fontSize: 20, fontWeight: FontWeight.w400, color: black)));
 
   static ThemeData darkTheme = ThemeData(
+      primaryColor: darkPrimary,
       scaffoldBackgroundColor: Colors.transparent,
-      appBarTheme:
-          AppBarTheme(backgroundColor: Colors.transparent, centerTitle: true));
+      appBarTheme: AppBarTheme(
+          shadowColor: Colors.transparent,
+          backgroundColor: Colors.transparent,
+          iconTheme: IconThemeData(color: Colors.white),
+          centerTitle: true,
+          titleTextStyle: TextStyle(
+              fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white)),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        backgroundColor: darkPrimary,
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: gold,
+        unselectedItemColor: wihte,
+      ),
+      textTheme: TextTheme(
+          headlineSmall: TextStyle(
+              fontSize: 25, fontWeight: FontWeight.w400, color: wihte),
+          titleLarge: TextStyle(
+              fontSize: 20, fontWeight: FontWeight.w400, color: gold)));
 }
