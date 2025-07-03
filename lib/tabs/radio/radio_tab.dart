@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/tabs/settings/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class RadioTab extends StatelessWidget {
   static const String routName = 'radioTab';
 
   @override
   Widget build(BuildContext context) {
+    SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
     return Scaffold(
       body: Column(
         children: [
@@ -27,7 +30,9 @@ class RadioTab extends StatelessWidget {
                 horizontal: MediaQuery.of(context).size.width * 0.10,
                 vertical: MediaQuery.of(context).size.height * 0.09),
             child: Image.asset(
-              'assets/images/radio_controls.png',
+              settingsProvider.isDark
+                  ? 'assets/images/radio_controls_darkMode.png'
+                  : 'assets/images/radio_controls.png',
             ),
           )
         ],
