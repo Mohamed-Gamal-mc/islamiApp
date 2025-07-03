@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/app_theme.dart';
+import 'package:islami_app/tabs/settings/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class SebhaTab extends StatefulWidget {
   static const String routName = 'sebhaTab';
@@ -15,6 +17,7 @@ class _SebhaTabState extends State<SebhaTab> {
 
   @override
   Widget build(BuildContext context) {
+    SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -33,7 +36,9 @@ class _SebhaTabState extends State<SebhaTab> {
               numberOfTasbeh++;
             }),
             child: Image.asset(
-              'assets/images/body_sebha.png',
+              settingsProvider.isDark
+                  ? 'assets/images/sebha_dark_mode.png'
+                  : 'assets/images/body_sebha.png',
               height: MediaQuery.of(context).size.height * 0.40,
             ),
           ),
@@ -54,7 +59,9 @@ class _SebhaTabState extends State<SebhaTab> {
               height: MediaQuery.of(context).size.height * 0.10,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: AppTheme.lightPrimary,
+                color: settingsProvider.isDark
+                    ? AppTheme.gold
+                    : AppTheme.lightPrimary,
               ),
               child: Text(
                 '$numberOfTasbeh',
@@ -64,7 +71,9 @@ class _SebhaTabState extends State<SebhaTab> {
             alignment: Alignment.center,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              color: AppTheme.lightPrimary,
+              color: settingsProvider.isDark
+                  ? AppTheme.gold
+                  : AppTheme.lightPrimary,
             ),
             margin: EdgeInsets.symmetric(
                 horizontal: MediaQuery.of(context).size.width * 0.30,
